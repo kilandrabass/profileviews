@@ -1,18 +1,2 @@
-name: Profile Views Counter
-on:
-  schedule:
-    - cron: '0 */12 * * *'  # Every 12 hours
-  workflow_dispatch:
-
-jobs:
-  views:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: Generate GitHub Profile Views Counter
-        uses: antonkomarev/github-profile-views-counter@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+![Profile Views](https://komarev.com/ghpvc/?username=kilandrabass&color=brightgreen)
+   
