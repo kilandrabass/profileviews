@@ -1,22 +1,19 @@
-name: Profile Views Counter  
+name: Profile Views Counter
 on:
   schedule:
-    - cron: '0 */6 * * *'  # Every 6 hours
+    - cron: '0 */12 * * *'  # Every 12 hours
   workflow_dispatch:
 
 jobs:
-  release:
-    name: GitHub Profile Views Counter Action
-    runs-on: ubuntu-22.04
+  views:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.INSIGHTS_TOKEN }}
-      
-      - uses: actions/setup-node@v4
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Generate GitHub Profile Views Counter
+        uses: arturssmirnovs/github-profile-views-counter@v2
         with:
-          node-version: '18'
-      
-      - uses: lowiebenoot/profile-views-counter@main
-        env:
-          INSIGHTS_TOKEN: ${{ secrets.INSIGHTS_TOKEN }}
+          username: kilandrabass  # Replace with your username
+          token: ${{ secrets.GITHUB_TOKEN }}
