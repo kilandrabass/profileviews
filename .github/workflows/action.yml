@@ -13,7 +13,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Generate GitHub Profile Views Counter
-        uses: arturssmirnovs/github-profile-views-counter@v2
-        with:
-          username: kilandrabass  # Replace with your username
-          token: ${{ secrets.GITHUB_TOKEN }}
+        uses: antonkomarev/github-profile-views-counter@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
